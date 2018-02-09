@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="img/favicon.ico" />
+        <script src="js/jquery-1.12.4.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/snap.svg-min.js"></script>
+        <script src="js/loader.js"></script>
+        <script src="js/charts.js"></script>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+                box-sizing: border-box;
+            }
+            .icono {
+                font-family: Iconos;
+                text-align: justify;
+                margin: 3px;
+                color: #2d2100; 
+            }
+            #controles{
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                border-bottom: 5px solid #444;
+            }
+            .botonControl{
+                flex-grow: 1;
+                font-size: 1.6em;
+                font-family: sans-serif;
+            }
+            @font-face {
+                font-family: Iconos;
+                src: url(css/fonts/Glyphter.ttf); 
+            }
+            #contenedorCharts{
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .Gchart {
+                width: 50%;
+                border: 1px solid black;
+            }
+            @media screen and (max-width: 940px){
+                #contenedorCharts{
+                    flex-flow: column wrap;
+                }
+                .Gchart{
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="controles">
+            <button class="botonControl" id="graficoTarta"><span aria-hidden=true class="icono">G</span>Gráfico de tarta</button>
+            <button class="botonControl" id="graficoHorizontales"><span aria-hidden=true class="icono">I</span>Gráfico de barras</button>
+            <button class="botonControl" id="graficoDonut"><span aria-hidden=true class="icono">H</span>Gráfico de donut</button>
+        </div>
+        <div id="contenedorCharts">
+            <div class="Gchart" id="google_charts_tarta1"></div>
+            <div class="Gchart" id="google_charts_tarta2"></div>
+            <div class="Gchart" id="google_charts_barras1"></div>
+            <div class="Gchart" id="google_charts_barras2"></div>
+            <div class="Gchart" id="google_charts_donut1"></div>
+            <div class="Gchart" id="google_charts_donut2"></div>
+        </div>
+        <a href="index.html">Volver pa atrás</a>
+    </body>
+</html>

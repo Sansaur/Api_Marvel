@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+    Acceder a la API de Marvel
+        - Darse de alta en la pagina de desarrolladores de Marvel
+        - Conseguir la clave pública
+        - Cross-Origin: ¿En qué dominios es válido?
+        
+        Datos developer:
+            Nombre: ASánch9236
+            Public key: 2e6e2343a738921e86db6c5e55fc1784
+            Private key: a87173e03a67621adc81dada106427cfb612b2a3
+            
+
+    Sacar dos listas ahi
+
+    Diseño:
+
+    Una barra lateral por la derecha donde te dice que dos votos tienes y tiene el formulario de votación.
+    El formulario tiene teléfono, email y nombre.
+    Por la izquierda, ocupando 60-70% de la página estarán los paginados, con botones para elegir entre personajes o comics
+    
+    Comics tienen un título, portada y desplegable con información.
+    Personajes tienen imagen y nombre.
+    
+    La información se saca de manera asíncrona de la API de Marvel
+
+    Como mucho 10 comics o personajes en cada página del paginado.
+
+-->
+<html lang="es">
+    <head>
+        <title>Pagina de la API</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/css.css">
+        <link type="text/css" rel="stylesheet" href="css/simplePagination.css"/>
+        <link rel="shortcut icon" href="img/favicon.ico" />
+        <script src="js/jquery-1.12.4.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/jquery.expander.min.js"></script>
+        <script type="text/javascript" src="js/jquery.simplePagination.js"></script>
+        <script src="js/snap.svg-min.js"></script>
+        <script src="js/loader.js"></script>
+        <script src="js/js.js"></script>
+    </head>
+    <body>
+        <nav>
+            <img alt="logo" width="120" height="40" src="img/marvel_logo.png" />
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <img alt="logo" width="120" height="40" src="img/marvel_logo.png" />
+        </nav>
+        <div id="contenedorTotal">
+            <div id="seccionIzquierda">
+                <div id="controles">
+                    <div id="paginado"></div>
+                    <span style="vertical-align: middle;font-weight: bolder;font-size: 1.2em;">Cambiar categoría:</span>
+                    <button id="cambiarCategoria">Personajes</button>
+                </div>
+                <div id="loader">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div id="contenidosIzquierda">
+
+                </div>
+            </div>
+            <div class="aside">
+                <h1 style="text-align: center;background-color:red;color:white;">Tus votaciones</h1>
+                <div style="text-align: center;" id="personajeVotado">
+                    <h2>Personaje</h2>
+                    <img style="background-color:dodgerblue;" width=120 height=120 id="resultadoPJ" src="img/interrogante.png" alt="Imagen del personaje">
+                    <h3 id="textResultadoPJ">Ninguno</h3>
+                </div>
+                <div style="text-align: center;" id="comicVotado">
+                    <h2 >Comic</h2>
+                    <img style="background-color:orange;" width=115 height=150 id="resultadoComic" src="img/interrogante.png" alt="Imagen del comic">
+                    <h3 id="textResultadoComic">Ninguno</h3>
+                </div>
+                <div style="border-top: 1px solid gray;" id="formulario">
+                    <!--<img src="" alt="Imagen fluff">-->
+                    <h4>¡Vota por tus elecciones y entra en un sorteo!</h4>
+                    <div >
+                        <fieldset>
+                            <legend>Formulario para votar</legend>
+                            <label>Nombre:<input type="text" class="nombre" placeholder="Introduzca su nombre"></label>
+                            <label>Teléfono:<input type="text" class="telefono" placeholder="Introduzca su teléfono"></label>
+                            <label>E-mail:<input type="text" class="email" placeholder="Introduzca su E-mail"></label>
+                            <input id="Votar" type="submit" value="¡Enviar sus votaciones!">
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
